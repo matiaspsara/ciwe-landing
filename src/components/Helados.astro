@@ -1,0 +1,183 @@
+---
+import { categories, lineaHunno, lineaZero } from '../data/flavors.js';
+---
+
+<section id="helados" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section header -->
+    <div class="text-center mb-14">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green mb-3">Temporada 2025 / 26</p>
+      <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark">Nuestros Sabores</h2>
+      <div class="mt-4 w-16 h-0.5 bg-brand-green mx-auto"></div>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="flex gap-3 overflow-x-auto scrollbar-hide pb-4 mb-10 justify-start md:justify-center">
+      {categories.map((cat, i) => (
+        <button
+          class="tab-btn"
+          data-tab-btn={cat.id}
+          data-state={i === 0 ? 'active' : undefined}
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Carousels (one per category) -->
+    {categories.map((cat, i) => (
+      <div
+        data-tab-panel={cat.id}
+        class={i !== 0 ? 'hidden' : ''}
+      >
+        <div data-carousel class="relative">
+          <!-- Prev arrow -->
+          <button
+            data-prev
+            class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border-2 border-brand-green rounded-full items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors shadow-sm"
+            aria-label="Anterior"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <!-- Cards track -->
+          <div
+            data-track
+            class="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
+          >
+            {cat.items.map(item => (
+              <article
+                class="snap-start flex-none w-48 md:w-52 rounded-2xl overflow-hidden shadow-sm border border-brand-cream-dark bg-brand-cream flex flex-col"
+              >
+                <!-- Photo area (gradient placeholder, swap for <img> when photos arrive) -->
+                <div
+                  class="h-44 flex flex-col items-center justify-end pb-4 px-4 relative"
+                  style={`background: ${cat.gradient};`}
+                >
+                  {item.isNew && (
+                    <span class="absolute top-3 right-3 bg-brand-beige text-brand-green-dark text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full">
+                      Nuevo
+                    </span>
+                  )}
+                  <!-- Watermark logo for placeholder -->
+                  <img
+                    src="/logo.png"
+                    alt=""
+                    class={`w-14 opacity-10 ${cat.lightText ? 'invert brightness-200' : ''}`}
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <!-- Info area -->
+                <div class="p-4 flex flex-col gap-1 flex-1">
+                  <span class="text-[10px] font-black uppercase tracking-widest text-brand-taupe">
+                    {cat.label}
+                  </span>
+                  <h3 class="font-heading text-lg leading-snug text-brand-green-dark font-semibold">
+                    {item.name}
+                  </h3>
+                  {item.description && (
+                    <p class="text-xs text-brand-taupe leading-relaxed mt-1">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <!-- Next arrow -->
+          <button
+            data-next
+            class="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border-2 border-brand-green rounded-full items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors shadow-sm"
+            aria-label="Siguiente"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    ))}
+
+    <!-- Product types row -->
+    <div class="mt-20 mb-2">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-taupe text-center mb-8">También disfrutá de</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {[
+          { label: 'Tortas Heladas', description: 'Creaciones únicas para celebrar cada momento especial.' },
+          { label: 'Paletas', description: 'Refrescantes paletas artesanales con los sabores que más querés.' },
+          { label: 'Palitos', description: 'Clásicos y deliciosos, perfectos para todos los días.' },
+        ].map(type => (
+          <div class="rounded-2xl border-2 border-brand-cream-dark bg-brand-cream p-8 flex flex-col items-center text-center gap-3 hover:border-brand-green transition-colors">
+            <div class="w-14 h-14 rounded-full bg-brand-green/10 flex items-center justify-center">
+              <img src="/logo.png" alt="" class="w-8 opacity-40" aria-hidden="true" />
+            </div>
+            <h3 class="font-heading text-xl text-brand-green-dark font-semibold">{type.label}</h3>
+            <p class="text-sm text-brand-taupe leading-relaxed">{type.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Special lines -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {[lineaHunno, lineaZero].map(line => (
+        <div
+          class="rounded-2xl overflow-hidden shadow-sm"
+          style={`background: ${line.gradient};`}
+        >
+          <div class="p-8 text-white">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-3xl" aria-hidden="true">{line.icon}</span>
+              <div>
+                <span class="text-[10px] font-black uppercase tracking-widest opacity-70">{line.badge}</span>
+                <h3 class="font-heading text-2xl font-semibold leading-tight">{line.label}</h3>
+              </div>
+            </div>
+            <p class="text-sm opacity-80 leading-relaxed mb-6">{line.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {line.items.map(flavor => (
+                <span class="text-xs font-semibold bg-white/15 border border-white/30 rounded-full px-3 py-1">
+                  {flavor}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Tab switching
+  const tabBtns = document.querySelectorAll<HTMLButtonElement>('[data-tab-btn]');
+  const tabPanels = document.querySelectorAll<HTMLElement>('[data-tab-panel]');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.tabBtn;
+      tabBtns.forEach(b => b.removeAttribute('data-state'));
+      btn.setAttribute('data-state', 'active');
+      tabPanels.forEach(panel => {
+        panel.classList.toggle('hidden', panel.dataset.tabPanel !== id);
+      });
+    });
+  });
+
+  // Carousel arrows
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector<HTMLElement>('[data-track]')!;
+    carousel.querySelector('[data-prev]')?.addEventListener('click', () => {
+      track.scrollBy({ left: -230, behavior: 'smooth' });
+    });
+    carousel.querySelector('[data-next]')?.addEventListener('click', () => {
+      track.scrollBy({ left: 230, behavior: 'smooth' });
+    });
+  });
+</script>

@@ -1,0 +1,28 @@
+---
+const whatsappUrl = 'https://wa.me/5491169182118';
+const pedidosYaUrl = 'https://www.pedidosya.com.ar/restaurantes/san-miguel/heladeria-ciwe-menu';
+---
+
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+
+  <a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Escribinos por WhatsApp"
+    class="w-14 h-14 rounded-full shadow-lg flex items-center justify-center bg-white hover:scale-110 active:scale-95 transition-transform duration-200"
+  >
+    <img src="/logoWhatsapp.png" alt="WhatsApp" class="w-10 h-10 object-contain" />
+  </a>
+
+  <a
+    href={pedidosYaUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pedí por PedidosYa"
+    class="w-14 h-14 rounded-full shadow-lg flex items-center justify-center bg-white hover:scale-110 active:scale-95 transition-transform duration-200"
+  >
+    <img src="/logoPedidosYa.png" alt="PedidosYa" class="w-10 h-10 object-contain" />
+  </a>
+
+</div>

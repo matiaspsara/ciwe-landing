@@ -1,0 +1,77 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center overflow-hidden bg-brand-cream pt-16">
+  <!-- Decorative blobs -->
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-rose/20 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-sage/15 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Left: text content -->
+    <div class="flex flex-col items-start gap-6">
+      <img
+        src="/logo.png"
+        alt="Ciwe"
+        class="w-56 md:w-72 drop-shadow-sm"
+      />
+
+      <p class="font-heading text-brand-green-dark text-base md:text-lg tracking-[0.2em] uppercase">
+        Heladería Artesanal · Desde 1979
+      </p>
+
+      <p class="text-brand-taupe text-base md:text-lg leading-relaxed max-w-sm">
+        Los mejores sabores de la región, elaborados con dedicación y recetas propias.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-2">
+        <a
+          href="#helados"
+          class="px-10 py-4 bg-brand-green text-brand-cream font-heading font-semibold text-base rounded-full hover:bg-brand-green-dark transition-colors shadow-md"
+        >
+          Ver Sabores
+        </a>
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-taupe border border-brand-taupe/50 rounded-full px-4 py-2">
+          Temporada 2025 / 26
+        </span>
+      </div>
+    </div>
+
+    <!-- Right: photo placeholder — swap <div> for <img> when photo arrives -->
+    <div class="flex items-center justify-center">
+      <div class="relative w-full max-w-md">
+
+        <div
+          class="w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl"
+          style="background: linear-gradient(160deg, #1B6B3A 0%, #2D8A50 60%, #6B9B85 100%);"
+        >
+          <!-- Watermark — remove when photo is added -->
+          <div class="w-full h-full flex items-center justify-center">
+            <img
+              src="/logo.png"
+              alt=""
+              class="w-2/5 opacity-10 brightness-0 invert"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        <!-- Badge anchored to bottom-left of the card -->
+        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg px-5 py-3 flex flex-col gap-0.5">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-brand-taupe">Temporada</span>
+          <span class="font-heading text-brand-green-dark font-bold text-sm">+80 sabores únicos</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce text-brand-sage">
+    <span class="text-[10px] uppercase tracking-widest font-bold">Scroll</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</section>

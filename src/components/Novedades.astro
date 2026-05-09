@@ -1,0 +1,57 @@
+---
+import { newFlavors } from '../data/flavors.js';
+---
+
+<section id="novedades" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green mb-3">Temporada 2025 / 26</p>
+      <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark">Nuevos Sabores</h2>
+      <div class="mt-4 w-16 h-0.5 bg-brand-green mx-auto"></div>
+      <p class="mt-6 text-brand-taupe max-w-md mx-auto leading-relaxed">
+        Esta temporada llega con cuatro sabores únicos que no podés dejar de probar.
+      </p>
+    </div>
+
+    <!-- New flavor cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {newFlavors.map(flavor => (
+        <article class="rounded-2xl overflow-hidden shadow-sm border border-brand-cream-dark bg-brand-cream flex flex-col group">
+
+          <!-- Gradient top -->
+          <div
+            class="h-52 flex flex-col items-center justify-center relative"
+            style={`background: ${flavor.gradient};`}
+          >
+            <span class="absolute top-4 left-4 bg-brand-beige text-brand-green-dark text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+              Nuevo
+            </span>
+            <span class={`text-[10px] font-bold uppercase tracking-widest ${flavor.lightText ? 'text-white/60' : 'text-black/40'}`}>
+              {flavor.category}
+            </span>
+            <img
+              src="/logo.png"
+              alt=""
+              class={`w-16 mt-3 opacity-10 ${flavor.lightText ? 'invert brightness-200' : ''}`}
+              aria-hidden="true"
+            />
+          </div>
+
+          <!-- Info -->
+          <div class="p-6 flex flex-col gap-3 flex-1">
+            <h3 class="font-heading text-2xl text-brand-green-dark font-semibold leading-tight group-hover:text-brand-green transition-colors">
+              {flavor.name}
+            </h3>
+            <p class="text-sm text-brand-taupe leading-relaxed">
+              {flavor.description}
+            </p>
+          </div>
+
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

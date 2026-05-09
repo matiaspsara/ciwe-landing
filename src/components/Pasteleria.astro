@@ -1,0 +1,46 @@
+---
+---
+
+<section id="pasteleria" class="py-24 bg-brand-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+      <!-- Text -->
+      <div class="flex flex-col gap-6">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green">Pastelería</p>
+        <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark leading-tight">
+          El dulce arte<br /><em>de la pastelería</em>
+        </h2>
+        <div class="w-16 h-0.5 bg-brand-green"></div>
+        <p class="text-brand-taupe text-base leading-relaxed max-w-md">
+          Nuestra pastelería artesanal nace de la misma dedicación y los mismos ingredientes de calidad que nuestros helados. Tortas, alfajores y creaciones especiales elaboradas con amor.
+        </p>
+        <p class="text-brand-taupe text-sm leading-relaxed max-w-md opacity-70">
+          [Próximamente: carta de pastelería completa]
+        </p>
+      </div>
+
+      <!-- Visual grid placeholder -->
+      <div class="grid grid-cols-2 gap-4">
+        {['Tortas', 'Alfajores', 'Postres', 'Especiales'].map((item, i) => (
+          <div
+            class={`rounded-2xl bg-white border-2 border-brand-cream-dark p-6 flex flex-col items-center justify-center gap-3 text-center aspect-square ${i === 0 ? 'bg-brand-green text-white border-brand-green' : ''}`}
+          >
+            <div class={`w-10 h-10 rounded-full flex items-center justify-center ${i === 0 ? 'bg-white/20' : 'bg-brand-green/10'}`}>
+              <img
+                src="/logo.png"
+                alt=""
+                class={`w-6 ${i === 0 ? 'invert brightness-200 opacity-60' : 'opacity-30'}`}
+                aria-hidden="true"
+              />
+            </div>
+            <span class={`font-heading text-lg font-semibold ${i === 0 ? 'text-white' : 'text-brand-green-dark'}`}>
+              {item}
+            </span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
