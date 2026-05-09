@@ -6,14 +6,14 @@ import { categories, lineaHunno, lineaZero } from '../data/flavors.js';
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Section header -->
-    <div class="text-center mb-14">
+    <div data-animate class="text-center mb-14">
       <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green mb-3">Temporada 2025 / 26</p>
       <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark">Nuestros Sabores</h2>
       <div class="mt-4 w-16 h-0.5 bg-brand-green mx-auto"></div>
     </div>
 
     <!-- Category tabs -->
-    <div class="flex gap-3 overflow-x-auto scrollbar-hide pb-4 mb-10 justify-start md:justify-center">
+    <div data-animate style="--delay: 100ms" class="flex gap-3 overflow-x-auto scrollbar-hide pb-4 mb-10 justify-start md:justify-center">
       {categories.map((cat, i) => (
         <button
           class="tab-btn"
@@ -111,8 +111,8 @@ import { categories, lineaHunno, lineaZero } from '../data/flavors.js';
           { label: 'Tortas Heladas', description: 'Creaciones únicas para celebrar cada momento especial.' },
           { label: 'Paletas', description: 'Refrescantes paletas artesanales con los sabores que más querés.' },
           { label: 'Palitos', description: 'Clásicos y deliciosos, perfectos para todos los días.' },
-        ].map(type => (
-          <div class="rounded-2xl border-2 border-brand-cream-dark bg-brand-cream p-8 flex flex-col items-center text-center gap-3 hover:border-brand-green transition-colors">
+        ].map((type, i) => (
+          <div data-animate style={`--delay: ${i * 100}ms`} class="rounded-2xl border-2 border-brand-cream-dark bg-brand-cream p-8 flex flex-col items-center text-center gap-3 hover:border-brand-green transition-colors">
             <div class="w-14 h-14 rounded-full bg-brand-green/10 flex items-center justify-center">
               <img src="/logo.png" alt="" class="w-8 opacity-40" aria-hidden="true" />
             </div>
@@ -125,8 +125,10 @@ import { categories, lineaHunno, lineaZero } from '../data/flavors.js';
 
     <!-- Special lines -->
     <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-      {[lineaHunno, lineaZero].map(line => (
+      {[lineaHunno, lineaZero].map((line, i) => (
         <div
+          data-animate
+          style={`--delay: ${i * 120}ms`}
           class="rounded-2xl overflow-hidden shadow-sm"
           style={`background: ${line.gradient};`}
         >

@@ -6,7 +6,7 @@ import { newFlavors } from '../data/flavors.js';
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Header -->
-    <div class="text-center mb-14">
+    <div data-animate class="text-center mb-14">
       <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green mb-3">Temporada 2025 / 26</p>
       <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark">Nuevos Sabores</h2>
       <div class="mt-4 w-16 h-0.5 bg-brand-green mx-auto"></div>
@@ -17,8 +17,8 @@ import { newFlavors } from '../data/flavors.js';
 
     <!-- New flavor cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {newFlavors.map(flavor => (
-        <article class="rounded-2xl overflow-hidden shadow-sm border border-brand-cream-dark bg-brand-cream flex flex-col group">
+      {newFlavors.map((flavor, i) => (
+        <article data-animate style={`--delay: ${i * 100}ms`} class="rounded-2xl overflow-hidden shadow-sm border border-brand-cream-dark bg-brand-cream flex flex-col group">
 
           <!-- Gradient top -->
           <div
