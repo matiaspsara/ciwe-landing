@@ -128,9 +128,8 @@ import { categories, lineaHunno, lineaZero } from '../data/flavors.js';
       {[lineaHunno, lineaZero].map((line, i) => (
         <div
           data-animate
-          style={`--delay: ${i * 120}ms`}
+          style={`--delay: ${i * 120}ms; background: ${line.gradient};`}
           class="rounded-2xl overflow-hidden shadow-sm"
-          style={`background: ${line.gradient};`}
         >
           <div class="p-8 text-white">
             <div class="flex items-center gap-3 mb-4">
