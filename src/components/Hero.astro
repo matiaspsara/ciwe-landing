@@ -1,4 +1,9 @@
 ---
+const slides = [
+  { src: '/photos/Helado-Cono-Chocolate-Frutilla-Cartel.png', alt: 'Helado cono chocolate y frutilla con cartel Ciwe' },
+  { src: '/photos/Helado-Tres-Vasitos-Variados.jpg',           alt: 'Tres vasitos de helado variados Ciwe' },
+  { src: '/photos/Local-Vereda-Mesas-Exteriores.jpg',          alt: 'Mesas exteriores de Ciwe' },
+];
 ---
 
 <section class="relative min-h-screen flex items-center overflow-hidden bg-brand-cream pt-16">
@@ -8,22 +13,15 @@
 
   <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-    <!-- Left: text content -->
+    <!-- Left: text -->
     <div class="flex flex-col items-start gap-6">
-      <img
-        src="/logo.png"
-        alt="Ciwe"
-        class="w-56 md:w-72 drop-shadow-sm"
-      />
-
+      <img src="/logo.png" alt="Ciwe" class="w-56 md:w-72 drop-shadow-sm" />
       <p class="font-heading text-brand-green-dark text-base md:text-lg tracking-[0.2em] uppercase">
         Heladería Artesanal · Desde 1979
       </p>
-
       <p class="text-brand-taupe text-base md:text-lg leading-relaxed max-w-sm">
         Los mejores sabores de la región, elaborados con dedicación y recetas propias.
       </p>
-
       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-2">
         <a
           href="#helados"
@@ -37,26 +35,35 @@
       </div>
     </div>
 
-    <!-- Right: photo placeholder — swap <div> for <img> when photo arrives -->
+    <!-- Right: image carousel -->
     <div class="flex items-center justify-center">
       <div class="relative w-full max-w-md">
 
-        <div
-          class="w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl"
-          style="background: linear-gradient(160deg, #1B6B3A 0%, #2D8A50 60%, #6B9B85 100%);"
-        >
-          <!-- Watermark — remove when photo is added -->
-          <div class="w-full h-full flex items-center justify-center">
+        <!-- Slides -->
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
+          {slides.map((slide, i) => (
             <img
-              src="/logo.png"
-              alt=""
-              class="w-2/5 opacity-10 brightness-0 invert"
-              aria-hidden="true"
+              src={slide.src}
+              alt={slide.alt}
+              data-hero-slide={i}
+              class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+              loading={i === 0 ? 'eager' : 'lazy'}
             />
-          </div>
+          ))}
         </div>
 
-        <!-- Badge anchored to bottom-left of the card -->
+        <!-- Dots -->
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-10">
+          {slides.map((_, i) => (
+            <button
+              data-hero-dot={i}
+              aria-label={`Foto ${i + 1}`}
+              class={`w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125' : 'bg-white/50'}`}
+            />
+          ))}
+        </div>
+
+        <!-- Floating badge -->
         <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg px-5 py-3 flex flex-col gap-0.5">
           <span class="text-[10px] font-bold uppercase tracking-widest text-brand-taupe">Temporada</span>
           <span class="font-heading text-brand-green-dark font-bold text-sm">+80 sabores únicos</span>
@@ -75,3 +82,32 @@
     </svg>
   </div>
 </section>
+
+<script>
+  const slides = document.querySelectorAll<HTMLElement>('[data-hero-slide]');
+  const dots   = document.querySelectorAll<HTMLButtonElement>('[data-hero-dot]');
+  let current  = 0;
+
+  function goTo(n: number) {
+    slides[current].classList.replace('opacity-100', 'opacity-0');
+    dots[current].classList.remove('bg-white', 'scale-125');
+    dots[current].classList.add('bg-white/50');
+
+    current = n;
+
+    slides[current].classList.replace('opacity-0', 'opacity-100');
+    dots[current].classList.remove('bg-white/50');
+    dots[current].classList.add('bg-white', 'scale-125');
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+  });
+
+  let timer = setInterval(() => goTo((current + 1) % slides.length), 4000);
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo((current + 1) % slides.length), 4000);
+  }
+</script>

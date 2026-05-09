@@ -1,54 +1,64 @@
 ---
 ---
 
-<section id="historia" class="py-24 bg-brand-green text-brand-cream overflow-hidden relative">
+<section id="historia" class="bg-brand-green text-brand-cream overflow-hidden relative">
   <!-- Decorative background number -->
   <div class="absolute right-0 top-1/2 -translate-y-1/2 font-heading text-[20rem] leading-none text-white/5 select-none pointer-events-none font-bold">
     1979
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+  <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2">
 
-      <!-- Year display -->
-      <div class="flex flex-col gap-4">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-beige/80">Nuestra historia</p>
-        <div class="font-heading font-bold text-8xl md:text-9xl text-white leading-none">
-          1979
-        </div>
-        <div class="w-16 h-0.5 bg-brand-beige/50 mt-2"></div>
-        <p class="font-heading italic text-2xl text-brand-cream/80 leading-relaxed">
-          Más de 45 años haciendo los mejores helados de la región.
-        </p>
-      </div>
+    <!-- Left: text content -->
+    <div class="py-24 px-8 md:px-12 flex flex-col gap-6 justify-center">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-beige/80">Nuestra historia</p>
 
-      <!-- Story text -->
-      <div class="flex flex-col gap-6 text-brand-cream/80">
-        <p class="text-base leading-relaxed">
+      <div class="font-heading font-bold text-8xl md:text-9xl text-white leading-none">1979</div>
+
+      <div class="w-16 h-0.5 bg-brand-beige/50"></div>
+
+      <p class="font-heading italic text-xl text-brand-cream/80 leading-relaxed">
+        Más de 45 años haciendo los mejores helados de la región.
+      </p>
+
+      <div class="flex flex-col gap-4 text-brand-cream/75 text-sm leading-relaxed">
+        <p>
           Desde 1979, Ciwe es parte de la historia y los recuerdos de nuestra región. Lo que comenzó como un pequeño emprendimiento familiar se convirtió con el tiempo en un referente de la heladería artesanal.
         </p>
-        <p class="text-base leading-relaxed">
+        <p>
           Cada helado que elaboramos lleva el sello de nuestras recetas propias, ingredientes cuidadosamente seleccionados y el compromiso de mantener la calidad que nos caracteriza temporada tras temporada.
         </p>
-        <p class="text-base leading-relaxed">
-          [Agregá aquí la historia de Ciwe — fundadores, anécdotas, tradición familiar, etc.]
+        <p class="opacity-50 italic text-xs">
+          [Agregá aquí la historia de Ciwe]
         </p>
-
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-6 mt-4 pt-6 border-t border-white/20">
-          {[
-            { number: '+45', label: 'Años de historia' },
-            { number: '+80', label: 'Sabores únicos' },
-            { number: '100%', label: 'Artesanal' },
-          ].map(stat => (
-            <div class="text-center">
-              <div class="font-heading text-3xl font-bold text-white">{stat.number}</div>
-              <div class="text-xs uppercase tracking-widest text-brand-cream/60 mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
 
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/20 mt-2">
+        {[
+          { number: '+45', label: 'Años de historia' },
+          { number: '+80', label: 'Sabores únicos' },
+          { number: '100%', label: 'Artesanal' },
+        ].map(stat => (
+          <div class="text-center">
+            <div class="font-heading text-3xl font-bold text-white">{stat.number}</div>
+            <div class="text-xs uppercase tracking-widest text-brand-cream/60 mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
     </div>
+
+    <!-- Right: photo -->
+    <div class="hidden md:block relative min-h-[600px]">
+      <img
+        src="/photos/Local-Interior-Salon-Mesas.jpg"
+        alt="Interior del salón de Ciwe"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      <!-- Subtle green overlay to blend with section -->
+      <div class="absolute inset-0 bg-brand-green/20"></div>
+    </div>
+
   </div>
 </section>
