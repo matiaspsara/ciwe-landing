@@ -1,56 +1,60 @@
 ---
-import { newFlavors } from '../data/flavors.js';
+// Instagram feed via Behold.us (free tier).
+// Setup: go to behold.so → connect the Ciwe Instagram account → copy the widget ID.
+// Replace the BEHOLD_WIDGET_ID constant below with the real ID (looks like: "abc123xyz").
+const BEHOLD_WIDGET_ID = '';
 ---
 
 <section id="novedades" class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-5xl mx-auto px-6">
 
     <!-- Header -->
     <div data-animate class="text-center mb-14">
-      <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green mb-3">Temporada 2025 / 26</p>
-      <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark">Nuevos Sabores</h2>
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green mb-3">Seguinos</p>
+      <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark">Novedades</h2>
       <div class="mt-4 w-16 h-0.5 bg-brand-green mx-auto"></div>
       <p class="mt-6 text-brand-taupe max-w-md mx-auto leading-relaxed">
-        Esta temporada llega con cuatro sabores únicos que no podés dejar de probar.
+        Nuevos sabores, temporadas especiales y todo lo que pasa en Ciwe — directo desde nuestro Instagram.
       </p>
     </div>
 
-    <!-- New flavor cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {newFlavors.map((flavor, i) => (
-        <article data-animate style={`--delay: ${i * 100}ms`} class="rounded-2xl overflow-hidden shadow-sm border border-brand-cream-dark bg-brand-cream flex flex-col group">
+    <!-- Instagram feed embed -->
+    {BEHOLD_WIDGET_ID ? (
+      <div data-animate>
+        <div id={`behold-widget-${BEHOLD_WIDGET_ID}`}></div>
+        <script
+          type="text/javascript"
+          src={`https://behold.so/init.js?widgetId=${BEHOLD_WIDGET_ID}`}
+          async
+        ></script>
+      </div>
+    ) : (
+      <!-- Placeholder shown until the Behold widget ID is configured -->
+      <div data-animate class="rounded-2xl border-2 border-dashed border-brand-cream-dark bg-brand-cream py-16 flex flex-col items-center gap-4 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-brand-taupe/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="4" stroke-width="1.5"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+        <p class="text-brand-taupe text-sm">Feed de Instagram — pendiente de configurar</p>
+      </div>
+    )}
 
-          <!-- Gradient top -->
-          <div
-            class="h-52 flex flex-col items-center justify-center relative"
-            style={`background: ${flavor.gradient};`}
-          >
-            <span class="absolute top-4 left-4 bg-brand-beige text-brand-green-dark text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-              Nuevo
-            </span>
-            <span class={`text-[10px] font-bold uppercase tracking-widest ${flavor.lightText ? 'text-white/60' : 'text-black/40'}`}>
-              {flavor.category}
-            </span>
-            <img
-              src="/logo.png"
-              alt=""
-              class={`w-16 mt-3 opacity-10 ${flavor.lightText ? 'invert brightness-200' : ''}`}
-              aria-hidden="true"
-            />
-          </div>
-
-          <!-- Info -->
-          <div class="p-6 flex flex-col gap-3 flex-1">
-            <h3 class="font-heading text-2xl text-brand-green-dark font-semibold leading-tight group-hover:text-brand-green transition-colors">
-              {flavor.name}
-            </h3>
-            <p class="text-sm text-brand-taupe leading-relaxed">
-              {flavor.description}
-            </p>
-          </div>
-
-        </article>
-      ))}
+    <!-- Follow button -->
+    <div data-animate class="mt-10 flex justify-center">
+      <a
+        href="https://instagram.com/heladeriaciwe"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 border-2 border-brand-green text-brand-green font-heading text-sm uppercase tracking-widest px-7 py-3 rounded-full hover:bg-brand-green hover:text-white transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        @heladeriaciwe
+      </a>
     </div>
 
   </div>
