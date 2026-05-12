@@ -40,9 +40,17 @@ const {
             }
           });
         },
-        { threshold: 0.1 }
+        { threshold: 0.12 }
       );
-      document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+      document.querySelectorAll('[data-animate]').forEach(el => {
+        // Elements already in the viewport on load appear instantly — no flash
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('is-visible');
+        } else {
+          observer.observe(el);
+        }
+      });
     </script>
   </body>
 </html>
