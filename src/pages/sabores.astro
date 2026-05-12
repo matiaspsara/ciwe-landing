@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { categories, lineaHunno, lineaZero, newFlavors } from '../data/flavors.js';
+
+const leftCols  = categories.slice(0, 3); // Chocolates, Licores, Cremas
+const rightCols = categories.slice(3);    // Frutas al Agua, Dulce de Leche, Frutas a la Crema
+---
+
+<Layout title="Carta de Sabores · Ciwe" description="Todos los sabores de helado artesanal de Ciwe. Temporada 2025/26.">
+
+  <!-- Sticky back nav -->
+  <header class="bg-brand-green-dark text-white sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Volver al sitio
+      </a>
+      <img src="/logo.png" alt="Ciwe" class="h-7 brightness-0 invert" />
+      <span class="text-xs font-bold uppercase tracking-widest text-white/40 hidden sm:block">Heladería Artesanal</span>
+    </div>
+  </header>
+
+  <main class="bg-brand-cream">
+
+    <!-- Hero banner -->
+    <div class="bg-brand-green-dark relative overflow-hidden py-16 md:py-20 text-center">
+      <!-- Decorative watermark -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <span class="font-heading font-bold text-[18rem] leading-none text-white/[0.03]">1979</span>
+      </div>
+      <p class="relative text-xs font-bold uppercase tracking-[0.3em] text-brand-beige/70 mb-3">Heladería Ciwe</p>
+      <h1 class="relative font-heading text-4xl md:text-6xl text-white leading-tight">
+        Sabores<br /><em class="font-normal">Temporada 2025/26</em>
+      </h1>
+      <div class="relative mt-5 w-16 h-0.5 bg-brand-beige/40 mx-auto"></div>
+      <p class="relative mt-4 text-brand-cream/50 text-sm">Más de 80 sabores artesanales · San José 785, Muñiz</p>
+    </div>
+
+    <!-- Nuevos Sabores — full width featured block -->
+    <div class="bg-brand-green py-10 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-xs font-black uppercase tracking-[0.3em] text-brand-beige/80">★ Nuevos Sabores</span>
+          <div class="flex-1 h-px bg-white/15"></div>
+          <span class="text-xs text-brand-cream/40 uppercase tracking-widest">Temporada 2025/26</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {newFlavors.map(flavor => (
+            <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+              <h3 class="font-heading text-white text-base leading-snug mb-1">{flavor.name}</h3>
+              <p class="text-brand-cream/60 text-xs leading-relaxed">{flavor.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Main flavor list -->
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+
+        <!-- Left column -->
+        <div class="flex flex-col gap-10">
+          {leftCols.map(cat => (
+            <div>
+              <!-- Category header bar -->
+              <div
+                class="rounded-lg px-4 py-2.5 mb-4"
+                style={`background: ${cat.gradient};`}
+              >
+                <h2 class={`font-heading text-sm uppercase tracking-[0.2em] ${cat.lightText ? 'text-white' : 'text-brand-green-dark'}`}>
+                  {cat.label}
+                </h2>
+              </div>
+              <ul class="flex flex-col divide-y divide-brand-cream-dark">
+                {cat.items.map(item => (
+                  <li class="py-2 flex items-center justify-between gap-2">
+                    <span class="font-heading text-brand-green-dark text-sm leading-snug">{item.name}</span>
+                    {item.isNew && (
+                      <span class="text-[10px] font-black uppercase tracking-widest bg-brand-beige text-brand-green-dark px-2 py-0.5 rounded-full flex-shrink-0">Nuevo</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Right column -->
+        <div class="flex flex-col gap-10">
+          {rightCols.map(cat => (
+            <div>
+              <div
+                class="rounded-lg px-4 py-2.5 mb-4"
+                style={`background: ${cat.gradient};`}
+              >
+                <h2 class={`font-heading text-sm uppercase tracking-[0.2em] ${cat.lightText ? 'text-white' : 'text-brand-green-dark'}`}>
+                  {cat.label}
+                </h2>
+              </div>
+              <ul class="flex flex-col divide-y divide-brand-cream-dark">
+                {cat.items.map(item => (
+                  <li class="py-2 flex items-center justify-between gap-2">
+                    <span class="font-heading text-brand-green-dark text-sm leading-snug">{item.name}</span>
+                    {item.isNew && (
+                      <span class="text-[10px] font-black uppercase tracking-widest bg-brand-beige text-brand-green-dark px-2 py-0.5 rounded-full flex-shrink-0">Nuevo</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+      <!-- Divider -->
+      <div class="my-12 flex items-center gap-4">
+        <div class="flex-1 h-px bg-brand-cream-dark"></div>
+        <img src="/logo.png" alt="" class="w-7 opacity-20" aria-hidden="true" />
+        <div class="flex-1 h-px bg-brand-cream-dark"></div>
+      </div>
+
+      <!-- Special lines -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-12">
+        {[lineaHunno, lineaZero].map(line => (
+          <div>
+            <div
+              class="rounded-lg px-4 py-2.5 mb-4 flex items-center justify-between"
+              style={`background: ${line.gradient};`}
+            >
+              <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-white">{line.label}</h2>
+              <span class="text-[10px] font-black uppercase tracking-widest bg-white/20 text-white px-2.5 py-1 rounded-full">{line.badge}</span>
+            </div>
+            <p class="text-xs text-brand-taupe leading-relaxed mb-4 px-1">{line.description}</p>
+            <ul class="flex flex-col divide-y divide-brand-cream-dark">
+              {line.items.map(flavor => (
+                <li class="py-2">
+                  <span class="font-heading text-brand-green-dark text-sm">{flavor}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Footer note -->
+      <p class="text-center text-xs text-brand-taupe/50 italic">
+        Los sabores pueden variar según disponibilidad. Consultá en el local · 011 4664-6003
+      </p>
+
+    </div>
+  </main>
+
+</Layout>

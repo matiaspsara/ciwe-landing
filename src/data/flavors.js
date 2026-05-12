@@ -142,6 +142,70 @@ export const lineaZero = {
   ],
 };
 
+export const featuredFlavors = [
+  {
+    name: "Chocolate DUBAI",
+    category: "Chocolates",
+    description: "Chocolate amargo con salsa de pistacho y masa kadaifi",
+    photo: "/photos/flavors/chocolate-dubai.jpg",
+    isNew: true,
+  },
+  {
+    name: "Blanco Italiano",
+    category: "Chocolates",
+    description: "Chocolate blanco con salsa de pistacho y almendras",
+    photo: "/photos/flavors/blanco-italiano.jpg",
+  },
+  {
+    name: "Kelam",
+    category: "Chocolates",
+    description: "Crema de avellanas y chocolate",
+    photo: "/photos/flavors/kelam.jpg",
+  },
+  {
+    name: "Chocolate",
+    category: "Chocolates",
+    description: "Clásico chocolate artesanal",
+    photo: "/photos/flavors/chocolate-clasico.jpg",
+  },
+  {
+    name: "Crema Oreo",
+    category: "Cremas",
+    description: "Crema con trozos y swirl de Oreo",
+    photo: "/photos/flavors/crema-oreo.jpg",
+  },
+  {
+    name: "Vainilla",
+    category: "Cremas",
+    description: "Vainilla artesanal de elaboración propia",
+    photo: "/photos/flavors/vainilla.jpg",
+  },
+  {
+    name: "Dulce de Leche",
+    category: "Dulce de Leche",
+    description: "Dulce de leche clásico, el favorito de siempre",
+    photo: "/photos/flavors/dulce-de-leche.jpg",
+  },
+  {
+    name: "Frutilla a la Crema",
+    category: "Frutas a la Crema",
+    description: "Frutilla fresca con base de crema artesanal",
+    photo: "/photos/flavors/frutilla-crema.jpg",
+  },
+  {
+    name: "Almendrado",
+    category: "Frutas a la Crema",
+    description: "Crema de almendras con crocante de maní y caramelo",
+    photo: "/photos/flavors/almendrado.jpg",
+  },
+  {
+    name: "Mousse de Maracuyá",
+    category: "Frutas a la Crema",
+    description: "Mousse cremoso de maracuyá con semillas",
+    photo: "/photos/flavors/mousse-maracuya.jpg",
+  },
+];
+
 export const newFlavors = [
   {
     name: "Chocolate DUBAI",

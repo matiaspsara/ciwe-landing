@@ -53,26 +53,6 @@
   }
 }
 
-/* Tab button styles */
-.tab-btn {
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-brand-green);
-  border: 2px solid var(--color-brand-green);
-  background: transparent;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  flex-shrink: 0;
-}
-.tab-btn[data-state="active"] {
-  background: var(--color-brand-green);
-  color: var(--color-brand-cream);
-}
 
 /* Scroll animations */
 [data-animate] {
