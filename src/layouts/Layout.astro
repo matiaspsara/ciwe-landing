@@ -10,6 +10,50 @@ const {
   title = 'Ciwe · Heladería Artesanal',
   description = 'Heladería artesanal desde 1979. Los mejores helados de la región.',
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const ogImage = new URL('/photos/Helado-Cono-Chocolate-Frutilla-Cartel.png', canonicalURL).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "IceCreamShop",
+  "name": "Ciwe · Heladería Artesanal",
+  "description": description,
+  "url": canonicalURL.href,
+  "telephone": "+541146646003",
+  "image": ogImage,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "San José 785",
+    "addressLocality": "Muñiz",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:30",
+      "closes": "00:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Friday", "Saturday"],
+      "opens": "09:30",
+      "closes": "01:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday"],
+      "opens": "09:30",
+      "closes": "00:00"
+    }
+  ],
+  "sameAs": [
+    "https://instagram.com/heladeriaciwe",
+    "https://facebook.com/ciweheladeria"
+  ]
+};
 ---
 
 <!doctype html>
@@ -17,8 +61,29 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Ciwe · Heladería Artesanal" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Local Business JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
