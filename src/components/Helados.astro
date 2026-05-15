@@ -63,48 +63,78 @@ import { featuredFlavors, lineaHunno, lineaZero } from '../data/flavors.js';
       </a>
     </div>
 
-    <!-- Product types — tall photo panels -->
-    <div class="mt-20">
-      <p data-animate class="text-xs font-bold uppercase tracking-[0.25em] text-brand-taupe text-center mb-8">También disfrutá de</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {[
-          {
-            label: 'Tortas Heladas',
-            description: 'Creaciones únicas para celebrar cada momento especial.',
-            photo: '/photos/Torta-RedVelvet-Capas-Closeup.webp',
-          },
-          {
-            label: 'Paletas',
-            description: 'Paletas artesanales en los sabores que más querés.',
-            photo: '/photos/Helado-Tres-Vasitos-Variados.webp',
-          },
-          {
-            label: 'Palitos',
-            description: 'Clásicos y deliciosos, perfectos para todos los días.',
-            photo: '/photos/flavors/chocolate-dubai.webp',
-          },
-        ].map((type, i) => (
-          <div
-            data-animate
-            style={`--delay: ${i * 100}ms`}
-            class="group relative rounded-2xl overflow-hidden aspect-[3/4] md:aspect-auto md:h-[420px]"
-          >
+    <!-- Product types — editorial photo grids -->
+    <div class="mt-20 flex flex-col gap-4">
+      <p data-animate class="text-xs font-bold uppercase tracking-[0.25em] text-brand-taupe text-center mb-4">También disfrutá de</p>
+
+      <!-- Tortas Heladas: large left + two stacked right -->
+      <div data-animate class="grid grid-cols-1 md:grid-cols-3 gap-4 md:h-[520px]">
+
+        <!-- Main photo -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] md:aspect-auto md:col-span-2">
+          <img
+            src="/photos/Torta-Helada-Almendrado-Dos-Bandejas.webp"
+            alt="Tortas Heladas Ciwe"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-7">
+            <h3 class="font-heading text-3xl md:text-4xl text-white leading-tight mb-2">Tortas Heladas</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Creaciones únicas para celebrar cada momento especial.</p>
+          </div>
+        </div>
+
+        <!-- Two stacked photos -->
+        <div class="hidden md:grid grid-rows-2 gap-4">
+          <div class="group relative rounded-2xl overflow-hidden">
             <img
-              src={type.photo}
-              alt={type.label}
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="/photos/Torta-Helada-Chocolate-Closeup.webp"
+              alt="Torta helada de chocolate"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
-            <!-- Gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
-            <!-- Text -->
-            <div class="absolute bottom-0 left-0 right-0 p-7">
-              <h3 class="font-heading text-2xl md:text-3xl text-white leading-tight mb-2">{type.label}</h3>
-              <p class="text-white/70 text-sm leading-relaxed">{type.description}</p>
-            </div>
           </div>
-        ))}
+          <div class="group relative rounded-2xl overflow-hidden">
+            <img
+              src="/photos/Torta-Helada-Crema-Merengues-Vista-Aerea.webp"
+              alt="Torta helada de crema y merengues"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
       </div>
+
+      <!-- Paletas: two side by side -->
+      <div data-animate style="--delay: 100ms" class="grid grid-cols-2 gap-4 md:h-[380px]">
+
+        <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] md:aspect-auto">
+          <img
+            src="/photos/Paletas-Personajes-Spiderman-Peppa-Minion.webp"
+            alt="Paletas personalizadas Ciwe"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="font-heading text-2xl md:text-3xl text-white leading-tight mb-1">Paletas</h3>
+            <p class="text-white/70 text-sm leading-relaxed hidden md:block">Paletas artesanales en los sabores que más querés.</p>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] md:aspect-auto">
+          <img
+            src="/photos/Paleta-Spiderman-En-Mano.webp"
+            alt="Paleta artesanal Ciwe"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+
     </div>
 
     <!-- Special lines -->
