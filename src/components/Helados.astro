@@ -68,14 +68,14 @@ import { featuredFlavors, lineaHunno, lineaZero } from '../data/flavors.js';
       <p data-animate class="text-xs font-bold uppercase tracking-[0.25em] text-brand-taupe text-center mb-4">También disfrutá de</p>
 
       <!-- Tortas Heladas: large left + two stacked right -->
-      <div data-animate class="grid grid-cols-1 md:grid-cols-3 gap-4 md:h-[520px]">
+      <div data-animate class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
         <!-- Main photo -->
-        <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] md:aspect-auto md:col-span-2">
+        <div class="group relative rounded-2xl overflow-hidden h-72 md:h-[520px] md:col-span-2">
           <img
             src="/photos/Torta-Helada-Almendrado-Dos-Bandejas.webp"
             alt="Tortas Heladas Ciwe"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
@@ -85,21 +85,21 @@ import { featuredFlavors, lineaHunno, lineaZero } from '../data/flavors.js';
           </div>
         </div>
 
-        <!-- Two stacked photos -->
-        <div class="hidden md:grid grid-rows-2 gap-4">
-          <div class="group relative rounded-2xl overflow-hidden">
+        <!-- Two stacked photos (desktop only) -->
+        <div class="hidden md:flex flex-col gap-4 h-[520px]">
+          <div class="group relative rounded-2xl overflow-hidden flex-1">
             <img
               src="/photos/Torta-Helada-Chocolate-Closeup.webp"
               alt="Torta helada de chocolate"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
           </div>
-          <div class="group relative rounded-2xl overflow-hidden">
+          <div class="group relative rounded-2xl overflow-hidden flex-1">
             <img
               src="/photos/Torta-Helada-Crema-Merengues-Vista-Aerea.webp"
               alt="Torta helada de crema y merengues"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
           </div>
@@ -108,13 +108,13 @@ import { featuredFlavors, lineaHunno, lineaZero } from '../data/flavors.js';
       </div>
 
       <!-- Paletas: two side by side -->
-      <div data-animate style="--delay: 100ms" class="grid grid-cols-2 gap-4 md:h-[380px]">
+      <div data-animate style="--delay: 100ms" class="grid grid-cols-2 gap-4">
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] md:aspect-auto">
+        <div class="group relative rounded-2xl overflow-hidden h-52 md:h-[360px]">
           <img
             src="/photos/Paletas-Personajes-Spiderman-Peppa-Minion.webp"
             alt="Paletas personalizadas Ciwe"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
@@ -124,11 +124,11 @@ import { featuredFlavors, lineaHunno, lineaZero } from '../data/flavors.js';
           </div>
         </div>
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] md:aspect-auto">
+        <div class="group relative rounded-2xl overflow-hidden h-52 md:h-[360px]">
           <img
             src="/photos/Paleta-Spiderman-En-Mano.webp"
             alt="Paleta artesanal Ciwe"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
         </div>
