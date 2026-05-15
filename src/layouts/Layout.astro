@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
-const ogImage = new URL('/photos/Helado-Cono-Chocolate-Frutilla-Cartel.png', canonicalURL).href;
+const ogImage = new URL('/photos/Helado-Cono-Chocolate-Frutilla-Cartel.webp', canonicalURL).href;
 
 const jsonLd = {
   "@context": "https://schema.org",
