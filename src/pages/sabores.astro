@@ -6,7 +6,7 @@ const leftCols  = categories.slice(0, 3); // Chocolates, Licores, Cremas
 const rightCols = categories.slice(3);    // Frutas al Agua, Dulce de Leche, Frutas a la Crema
 ---
 
-<Layout title="Carta de Sabores · Ciwe" description="Todos los sabores de helado artesanal de Ciwe. Temporada 2025/26.">
+<Layout title="Carta de Sabores · Ciwe" description="Todos los sabores de helado artesanal de Ciwe.">
 
   <!-- Sticky back nav -->
   <header class="bg-brand-green-dark text-white sticky top-0 z-50">
@@ -32,7 +32,7 @@ const rightCols = categories.slice(3);    // Frutas al Agua, Dulce de Leche, Fru
       </div>
       <p class="relative text-xs font-bold uppercase tracking-[0.3em] text-brand-beige/70 mb-3">Heladería Ciwe</p>
       <h1 class="relative font-heading text-4xl md:text-6xl text-white leading-tight">
-        Sabores<br /><em class="font-normal">Temporada 2025/26</em>
+        Nuestros Sabores
       </h1>
       <div class="relative mt-5 w-16 h-0.5 bg-brand-beige/40 mx-auto"></div>
       <p class="relative mt-4 text-brand-cream/50 text-sm">Más de 80 sabores artesanales · San José 785, Muñiz</p>
@@ -44,7 +44,6 @@ const rightCols = categories.slice(3);    // Frutas al Agua, Dulce de Leche, Fru
         <div class="flex items-center gap-4 mb-6">
           <span class="text-xs font-black uppercase tracking-[0.3em] text-brand-beige/80">★ Nuevos Sabores</span>
           <div class="flex-1 h-px bg-white/15"></div>
-          <span class="text-xs text-brand-cream/40 uppercase tracking-widest">Temporada 2025/26</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {newFlavors.map(flavor => (
