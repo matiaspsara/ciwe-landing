@@ -2,9 +2,9 @@
 const photos = [
   { src: '/photos/Mesa-Desayuno-Cafe-Postres-Variados.webp', alt: 'Mesa de desayuno con café y postres', tall: true },
   { src: '/photos/Torta-RedVelvet-Capas-Closeup.webp',       alt: 'Torta Red Velvet por capas' },
-  { src: '/photos/Cheesecake-Pistacho-Almendras.webp',       alt: 'Cheesecake de pistacho con almendras' },
-  { src: '/photos/Torta-Oreo-Porcion-Servida.webp',          alt: 'Porción de torta Oreo' },
-  { src: '/photos/Torta-Zanahoria-Porcion-Cuadrada.webp',    alt: 'Porción de torta de zanahoria' },
+  { src: '/photos/Cheesecake-Pistacho-Almendras.webp',       alt: 'Cheesecake italiano con pistacho' },
+  { src: '/photos/pasteleria/LemonPie.webp',                 alt: 'Lemon Pie artesanal' },
+  { src: '/photos/pasteleria/BrowniePatagonico.webp',        alt: 'Brownie Patagónico' },
 ];
 ---
 
@@ -44,11 +44,33 @@ const photos = [
         </h2>
         <div class="w-16 h-0.5 bg-brand-green"></div>
         <p class="text-brand-taupe text-base leading-relaxed max-w-md">
-          Nuestra pastelería artesanal nace de la misma dedicación y los mismos ingredientes de calidad que nuestros helados. Tortas, postres y creaciones especiales elaboradas con amor.
+          Desde tortas heladas para celebrar hasta postres por porción para el día a día. Todo elaborado con los mismos ingredientes de calidad que nuestros helados.
         </p>
-        <p class="text-brand-taupe/50 text-sm italic">
-          [Próximamente: carta de pastelería completa]
-        </p>
+        <div class="flex flex-wrap gap-4 text-sm text-brand-taupe">
+          <span class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
+            Tortas heladas para celebraciones
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
+            Postres artesanales por porción
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
+            Opciones sin TACC disponibles
+          </span>
+        </div>
+        <div class="mt-2">
+          <a
+            href="/pasteleria"
+            class="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-brand-green text-brand-green font-heading font-bold text-sm uppercase tracking-wider rounded-full hover:bg-brand-green hover:text-white transition-colors"
+          >
+            Ver carta completa
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>

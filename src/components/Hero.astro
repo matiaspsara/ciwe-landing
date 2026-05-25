@@ -41,6 +41,7 @@ const slides = [
         alt={slide.alt}
         class="absolute inset-0 w-full h-full object-cover"
         loading={i === 0 ? 'eager' : 'lazy'}
+        fetchpriority={i === 0 ? 'high' : 'auto'}
       />
       <!-- Gradient overlay: dark left → transparent right -->
       <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10"></div>
