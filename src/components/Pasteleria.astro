@@ -1,65 +1,26 @@
 ---
-const photos = [
-  { src: '/photos/Mesa-Desayuno-Cafe-Postres-Variados.webp', alt: 'Mesa de desayuno con café y postres', tall: true },
-  { src: '/photos/Torta-RedVelvet-Capas-Closeup.webp',       alt: 'Torta Red Velvet por capas' },
-  { src: '/photos/Cheesecake-Pistacho-Almendras.webp',       alt: 'Cheesecake italiano con pistacho' },
-  { src: '/photos/pasteleria/LemonPie.webp',                 alt: 'Lemon Pie artesanal' },
-  { src: '/photos/pasteleria/BrowniePatagonico.webp',        alt: 'Brownie Patagónico' },
+const featured = [
+  { src: '/photos/pasteleria/Cheesecake-Italiano.webp', name: 'Cheesecake Italiano', tag: 'Sin TACC' },
+  { src: '/photos/pasteleria/LemonPie.webp',            name: 'Lemon Pie',            tag: null },
+  { src: '/photos/pasteleria/BrowniePatagonico.webp',   name: 'Brownie Patagónico',   tag: null },
+  { src: '/photos/pasteleria/RedVelvet.webp',           name: 'Red Velvet',           tag: null },
 ];
 ---
 
 <section id="pasteleria" class="py-24 bg-brand-cream">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-
-      <!-- Photo grid -->
-      <div class="grid grid-cols-3 grid-rows-2 gap-3 h-[480px] order-2 md:order-1">
-        <!-- Tall left image -->
-        <div data-animate class="row-span-2 rounded-2xl overflow-hidden">
-          <img
-            src={photos[0].src}
-            alt={photos[0].alt}
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-        <!-- 2x2 grid on the right -->
-        {photos.slice(1).map((photo, i) => (
-          <div data-animate style={`--delay: ${(i + 1) * 80}ms`} class="rounded-2xl overflow-hidden">
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-[5fr_7fr] gap-16 items-center">
 
       <!-- Text -->
-      <div data-animate class="flex flex-col gap-6 order-1 md:order-2">
+      <div data-animate class="flex flex-col gap-6">
         <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-green">Pastelería</p>
         <h2 class="font-heading text-5xl md:text-6xl text-brand-green-dark leading-tight">
           El dulce arte<br /><em>de la pastelería</em>
         </h2>
         <div class="w-16 h-0.5 bg-brand-green"></div>
-        <p class="text-brand-taupe text-base leading-relaxed max-w-md">
+        <p class="text-brand-taupe text-base leading-relaxed">
           Desde tortas heladas para celebrar hasta postres por porción para el día a día. Todo elaborado con los mismos ingredientes de calidad que nuestros helados.
         </p>
-        <div class="flex flex-wrap gap-4 text-sm text-brand-taupe">
-          <span class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
-            Tortas heladas para celebraciones
-          </span>
-          <span class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
-            Postres artesanales por porción
-          </span>
-          <span class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
-            Opciones sin TACC disponibles
-          </span>
-        </div>
         <div class="mt-2">
           <a
             href="/pasteleria"
@@ -71,6 +32,30 @@ const photos = [
             </svg>
           </a>
         </div>
+      </div>
+
+      <!-- Product cards -->
+      <div class="grid grid-cols-2 gap-3">
+        {featured.map((item, i) => (
+          <div
+            data-animate
+            style={`--delay: ${i * 80}ms`}
+            class="group relative rounded-2xl overflow-hidden aspect-square bg-brand-cream-dark"
+          >
+            <img
+              src={item.src}
+              alt={item.name}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent px-4 py-4 pt-10">
+              <p class="text-white font-heading font-bold text-sm leading-tight">{item.name}</p>
+              {item.tag && (
+                <span class="text-[11px] text-white/75 font-sans mt-0.5 block">{item.tag}</span>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
 
     </div>
