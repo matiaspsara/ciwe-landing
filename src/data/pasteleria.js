@@ -4,20 +4,20 @@ export const tortasHeladas = [
     description: "Clásico postre de almendrado, recubierto con crocante de maní.",
     badges: [{ text: "Sin TACC", color: "green" }],
     sizes: "6-8 / 12-15 porciones",
-    photo: "/photos/Torta-Helada-Almendrado-Dos-Bandejas.webp",
+    photo: "/photos/pasteleria/Almendrado-card.webp",
   },
   {
     name: "Merengata",
     description: "Dulce de leche, merengue y chocolate blanco, recubierta con crema y crocante de maní.",
     badges: [{ text: "Sin TACC", color: "green" }],
     sizes: "6-8 / 12-15 porciones",
-    photo: "/photos/Torta-Helada-Crema-Merengues-Vista-Aerea.webp",
+    photo: "/photos/pasteleria/Merengata-card.webp",
   },
   {
     name: "Selva Negra",
     description: "Chocolate con cerezas, almendras y crocante de maní, recubierta con chocolate, crema y cerezas.",
     sizes: "6-8 / 12-15 porciones",
-    photo: "/photos/Torta-Helada-Chocolate-Closeup.webp",
+    photo: "/photos/pasteleria/SelvaNegra-card.webp",
   },
   {
     name: "Chocotorta",
@@ -60,7 +60,7 @@ export const postres = [
     name: "Cheesecake Italiano",
     description: "Cheesecake con cacao, base de chocolate, recubierto con ganache de pistacho y almendras caramelizadas.",
     tags: ["Más vendido"],
-    photo: "/photos/Cheesecake-Pistacho-Almendras.webp",
+    photo: "/photos/pasteleria/Cheesecake-Italiano.webp",
   },
   {
     name: "Chocotorta",
@@ -76,12 +76,12 @@ export const postres = [
   {
     name: "Red Velvet",
     description: "Bizcocho rojo con dos capas de glaseado de queso cremoso, recubierto con chocolate blanco y frutos rojos.",
-    photo: "/photos/Torta-RedVelvet-Capas-Closeup.webp",
+    photo: "/photos/pasteleria/RedVelvet.webp",
   },
   {
     name: "Carrot Cake",
     description: "Bizcocho de zanahoria con nuez, canela y frosting de queso crema.",
-    photo: "/photos/Torta-Zanahoria-Porcion-Cuadrada.webp",
+    photo: "/photos/pasteleria/CarrotCake.webp",
   },
   {
     name: "Lemon Pie",

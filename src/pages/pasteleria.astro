@@ -54,7 +54,7 @@ import { tortasHeladas, postres } from '../data/pasteleria.js';
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {tortasHeladas.map((torta) => (
             <article class="group rounded-2xl overflow-hidden border border-brand-cream-dark bg-white flex flex-col shadow-sm">
-              <div class="relative overflow-hidden aspect-[4/3]">
+              <div class="relative overflow-hidden aspect-square">
                 {torta.photo ? (
                   <img
                     src={torta.photo}
@@ -113,7 +113,7 @@ import { tortasHeladas, postres } from '../data/pasteleria.js';
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {postres.map((postre) => (
             <article class="group rounded-2xl overflow-hidden border border-brand-cream-dark bg-white flex flex-col shadow-sm">
-              <div class="relative overflow-hidden aspect-[4/3]">
+              <div class="relative overflow-hidden aspect-square">
                 {postre.photo ? (
                   <img
                     src={postre.photo}
