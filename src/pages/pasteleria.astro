@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { tortasHeladas, postres } from '../data/pasteleria.js';
+import { postres } from '../data/pasteleria.js';
 ---
 
-<Layout title="Pastelería · Ciwe" description="Carta de pastelería artesanal de Ciwe. Tortas heladas, postres y creaciones especiales.">
+<Layout title="Pastelería · Ciwe" description="Carta de pastelería artesanal de Ciwe. Postres y creaciones especiales por porción.">
 
   <!-- Sticky back nav -->
   <header class="bg-brand-green-dark text-white sticky top-0 z-50">
@@ -31,74 +31,7 @@ import { tortasHeladas, postres } from '../data/pasteleria.js';
         Pastelería
       </h1>
       <div class="relative mt-5 w-16 h-0.5 bg-brand-beige/40 mx-auto"></div>
-      <p class="relative mt-4 text-brand-cream/50 text-sm">Tortas heladas y postres artesanales</p>
-    </div>
-
-    <!-- Sub-nav -->
-    <nav class="bg-white border-b border-brand-cream-dark sticky top-14 z-40">
-      <div class="max-w-6xl mx-auto px-6 flex gap-8 h-12 items-center">
-        <a href="#tortas-heladas" class="text-xs font-bold uppercase tracking-widest text-brand-green hover:text-brand-green-dark transition-colors">Tortas Heladas</a>
-        <a href="#postres" class="text-xs font-bold uppercase tracking-widest text-brand-taupe hover:text-brand-green-dark transition-colors">Postres</a>
-      </div>
-    </nav>
-
-    <!-- Tortas Heladas -->
-    <section id="tortas-heladas" class="py-12 px-6">
-      <div class="max-w-6xl mx-auto">
-
-        <div class="mb-8">
-          <h2 class="font-heading text-3xl md:text-4xl text-brand-green-dark">Tortas Heladas</h2>
-          <p class="text-sm text-brand-taupe mt-2">Pedidos con anticipación · Consultar disponibilidad</p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {tortasHeladas.map((torta) => (
-            <article class="group rounded-2xl overflow-hidden border border-brand-cream-dark bg-white flex flex-col shadow-sm">
-              <div class="relative overflow-hidden aspect-square">
-                {torta.photo ? (
-                  <img
-                    src={torta.photo}
-                    alt={torta.name}
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div
-                    class="w-full h-full"
-                    style={`background: ${torta.gradient};`}
-                  />
-                )}
-                {torta.badges?.map((badge) => (
-                  <span class="absolute top-3 left-3 bg-brand-green text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full">
-                    {badge.text}
-                  </span>
-                ))}
-              </div>
-              <div class="p-4 flex flex-col gap-1.5 flex-1">
-                <h3 class={`font-heading text-base leading-snug ${torta.lightText && !torta.photo ? 'text-brand-green-dark' : 'text-brand-green-dark'}`}>
-                  {torta.name}
-                </h3>
-                <p class="text-xs text-brand-taupe leading-relaxed flex-1">{torta.description}</p>
-                {torta.sizes && (
-                  <p class="text-[10px] font-bold uppercase tracking-widest text-brand-taupe/60 mt-1">
-                    {torta.sizes}
-                  </p>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4">
-        <div class="flex-1 h-px bg-brand-cream-dark"></div>
-        <img src="/logo.png" alt="" class="w-7 opacity-20" aria-hidden="true" />
-        <div class="flex-1 h-px bg-brand-cream-dark"></div>
-      </div>
+      <p class="relative mt-4 text-brand-cream/50 text-sm">Postres artesanales · Porciones individuales</p>
     </div>
 
     <!-- Postres -->

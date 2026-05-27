@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { categories, lineaHunno, lineaZero, newFlavors } from '../data/flavors.js';
+import { tortasHeladas } from '../data/pasteleria.js';
 
 const leftCols  = categories.slice(0, 3); // Chocolates, Licores, Cremas
 const rightCols = categories.slice(3);    // Frutas al Agua, Dulce de Leche, Frutas a la Crema
@@ -151,6 +152,50 @@ const rightCols = categories.slice(3);    // Frutas al Agua, Dulce de Leche, Fru
       </p>
 
     </div>
+
+    <!-- Tortas Heladas -->
+    <section id="tortas-heladas" class="border-t border-brand-cream-dark py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="mb-8">
+          <h2 class="font-heading text-3xl md:text-4xl text-brand-green-dark">Tortas Heladas</h2>
+          <p class="text-sm text-brand-taupe mt-2">Pedidos con anticipación · Consultar disponibilidad</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {tortasHeladas.map((torta) => (
+            <article class="group rounded-2xl overflow-hidden border border-brand-cream-dark bg-white flex flex-col shadow-sm">
+              <div class="relative overflow-hidden aspect-square">
+                {torta.photo ? (
+                  <img
+                    src={torta.photo}
+                    alt={torta.name}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="w-full h-full" style={`background: ${torta.gradient};`} />
+                )}
+                {torta.badges?.map((badge) => (
+                  <span class="absolute top-3 left-3 bg-brand-green text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full">
+                    {badge.text}
+                  </span>
+                ))}
+              </div>
+              <div class="p-4 flex flex-col gap-1.5 flex-1">
+                <h3 class="font-heading text-base leading-snug text-brand-green-dark">{torta.name}</h3>
+                <p class="text-xs text-brand-taupe leading-relaxed flex-1">{torta.description}</p>
+                {torta.sizes && (
+                  <p class="text-[10px] font-bold uppercase tracking-widest text-brand-taupe/60 mt-1">{torta.sizes}</p>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
 </Layout>
