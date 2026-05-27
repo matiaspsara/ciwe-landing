@@ -8,14 +8,14 @@ const carousel = tortasHeladas.filter(t => t.name !== 'Selva Negra');
 <section id="tortas-heladas" class="bg-white">
 
   <!-- Billboard hero (Selva Negra) -->
-  <div data-animate class="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+  <div data-animate class="relative w-full h-[400px] md:h-[500px] overflow-hidden bg-[#1a1a1a]">
     <img
       src={hero.photo}
       alt="Tortas Heladas Ciwe"
-      class="absolute inset-0 w-full h-full object-cover"
+      class="absolute inset-0 w-full h-full object-contain object-right"
       loading="lazy"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-black/72 via-black/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent"></div>
     <div class="absolute inset-0 flex flex-col justify-center px-8 md:px-16">
       <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-beige/75 mb-3">Heladería Ciwe</p>
       <h2 class="font-heading text-5xl md:text-6xl text-white leading-tight mb-3">
