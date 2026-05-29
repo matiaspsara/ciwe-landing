@@ -70,11 +70,6 @@ export const postres = [
     photo: "/photos/pasteleria/BrowniePatagonico.webp",
   },
   {
-    name: "Red Velvet",
-    description: "Bizcocho rojo con dos capas de glaseado de queso cremoso, recubierto con chocolate blanco y frutos rojos.",
-    photo: "/photos/pasteleria/RedVelvet.webp",
-  },
-  {
     name: "Carrot Cake",
     description: "Bizcocho de zanahoria con nuez, canela y frosting de queso crema.",
     photo: "/photos/pasteleria/CarrotCake.webp",
