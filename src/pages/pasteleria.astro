@@ -52,6 +52,10 @@ import { postres } from '../data/pasteleria.js';
                     src={postre.photo}
                     alt={postre.name}
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={[
+                      postre.objectPosition ? `object-position: ${postre.objectPosition}` : '',
+                      postre.imageScale ? `transform: scale(${postre.imageScale})` : '',
+                    ].filter(Boolean).join('; ') || undefined}
                     loading="lazy"
                   />
                 ) : (

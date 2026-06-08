@@ -68,11 +68,13 @@ export const postres = [
     name: "Torta Matilda",
     description: "Torta de chocolate húmeda con relleno de dulce de leche y cobertura de ganache.",
     photo: "/photos/pasteleria/TortaMatilda.webp",
+    objectPosition: "center 78%",
   },
   {
     name: "Brownie",
     description: "Brownie de chocolate clásico.",
     photo: "/photos/pasteleria/Brownie.webp",
+    imageScale: "1.8",
   },
   {
     name: "Brownie Patagónico",
