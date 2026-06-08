@@ -6,7 +6,6 @@ export const categories = [
     lightText: true,
     items: [
       { name: "Chocolate DUBAI", isNew: true, description: "Chocolate amargo con salsa de pistacho y masa kadaifi" },
-      { name: "Manjar Blanco", isNew: true, description: "Chocolate blanco con dulce de leche natural y pedacitos de brownie" },
       { name: "Bombón Kind" },
       { name: "Bombón Rocher's" },
       { name: "Chocolate" },
@@ -42,7 +41,6 @@ export const categories = [
       { name: "Merengue con Dulce" },
       { name: "Tramontana" },
       { name: "Vainilla" },
-      { name: "Velvet" },
     ],
   },
   {
@@ -88,6 +86,7 @@ export const categories = [
       { name: "Dulce de Leche Granizado" },
       { name: "Dulce de Leche Split" },
       { name: "Dulce Scaloneta" },
+      { name: "Súper Dulce Scaloneta" },
       { name: "Flan con Dulce de Leche" },
       { name: "Mousse de D.L. con Brownie" },
       { name: "Súper Merengata" },
@@ -110,6 +109,7 @@ export const categories = [
       { name: "Mousse de Limón" },
       { name: "Mousse de Maracuyá" },
       { name: "Súper Frutilla" },
+      { name: "Amarena" },
       { name: "Pistacho con Frutos Rojos" },
       { name: "Pistachoco" },
     ],
@@ -163,10 +163,10 @@ export const featuredFlavors = [
     photo: "/photos/flavors/kelam.webp",
   },
   {
-    name: "Chocolate",
+    name: "Súper Brownie",
     category: "Chocolates",
-    description: "Clásico chocolate artesanal",
-    photo: "/photos/flavors/chocolate-clasico.webp",
+    description: "Crema de chocolate con trozos de brownie",
+    photo: "/photos/flavors/super-brownie.webp",
   },
   {
     name: "Crema Oreo",
@@ -175,22 +175,22 @@ export const featuredFlavors = [
     photo: "/photos/flavors/crema-oreo.webp",
   },
   {
-    name: "Vainilla",
-    category: "Cremas",
-    description: "Vainilla artesanal de elaboración propia",
-    photo: "/photos/flavors/vainilla.webp",
-  },
-  {
-    name: "Dulce de Leche",
-    category: "Dulce de Leche",
-    description: "Dulce de leche clásico, el favorito de siempre",
-    photo: "/photos/flavors/dulce-de-leche.webp",
-  },
-  {
-    name: "Frutilla a la Crema",
+    name: "Mousse de Arándanos",
     category: "Frutas a la Crema",
-    description: "Frutilla fresca con base de crema artesanal",
-    photo: "/photos/flavors/frutilla-crema.webp",
+    description: "Mousse cremoso de arándanos",
+    photo: "/photos/flavors/mousse-arandanos.webp",
+  },
+  {
+    name: "Torta Galesa",
+    category: "Licores",
+    description: "Clásico sabor de torta galesa con frutas y especias",
+    photo: "/photos/flavors/torta-galesa.webp",
+  },
+  {
+    name: "Amarena",
+    category: "Frutas a la Crema",
+    description: "Crema con cerezas amarena",
+    photo: "/photos/flavors/amarena.webp",
   },
   {
     name: "Almendrado",
@@ -213,13 +213,6 @@ export const newFlavors = [
     description: "Chocolate amargo con salsa de pistacho y masa kadaifi",
     gradient: "linear-gradient(160deg, #2C1502 0%, #7B4220 100%)",
     lightText: true,
-  },
-  {
-    name: "Manjar Blanco",
-    category: "Chocolates",
-    description: "Chocolate blanco con dulce de leche natural y pedacitos de brownie",
-    gradient: "linear-gradient(160deg, #F0E0C0 0%, #D8C0A0 100%)",
-    lightText: false,
   },
   {
     name: "Macaron Frambuesa",

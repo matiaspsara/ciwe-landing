@@ -54,7 +54,7 @@ export const postres = [
   },
   {
     name: "Cheesecake Italiano",
-    description: "Cheesecake con cacao, base de chocolate, recubierto con ganache de pistacho y almendras caramelizadas.",
+    description: "Cheesecake con ganache de pistacho y almendras caramelizadas. Dos opciones: chocolate blanco o negro.",
     tags: ["Más vendido"],
     photo: "/photos/pasteleria/Cheesecake-Italiano.webp",
   },
@@ -63,6 +63,16 @@ export const postres = [
     description: "Clásica torta de galletitas de chocolate, rellena de dulce de leche y cubierta en chocolate.",
     tags: ["Más vendido"],
     photo: "/photos/pasteleria/Chocotorta-Porcion.webp",
+  },
+  {
+    name: "Torta Matilda",
+    description: "Torta de chocolate húmeda con relleno de dulce de leche y cobertura de ganache.",
+    photo: "/photos/pasteleria/TortaMatilda.webp",
+  },
+  {
+    name: "Brownie",
+    description: "Brownie de chocolate clásico.",
+    photo: "/photos/pasteleria/Brownie.webp",
   },
   {
     name: "Brownie Patagónico",
