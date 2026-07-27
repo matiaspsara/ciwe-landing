@@ -18,7 +18,6 @@ export const categories = [
       { name: "Kelam" },
       { name: "Marroc" },
       { name: "Selva Negra" },
-      { name: "Súper Brownie" },
       { name: "Tofi Merengue" },
       { name: "Blanco Italiano" },
     ],
@@ -33,7 +32,6 @@ export const categories = [
       { name: "Cheesecake de Frutilla" },
       { name: "Crema Americana" },
       { name: "Crema Oreo" },
-      { name: "Crema del Cielo" },
       { name: "Granizado" },
       { name: "Mantecol" },
       { name: "Mascarpone con Frutos" },
@@ -55,7 +53,6 @@ export const categories = [
       { name: "Sambayón con Almendras" },
       { name: "Tiramisú" },
       { name: "Torta Galesa" },
-      { name: "Crema Rusa" },
     ],
   },
   {
@@ -65,7 +62,6 @@ export const categories = [
     lightText: true,
     items: [
       { name: "Macaron Frambuesa", isNew: true, description: "Frambuesa al agua con merengue italiano" },
-      { name: "Mix Frutal", isNew: true, description: "Durazno al agua con trozos de ananá, durazno, arándanos y salsa de frambuesa" },
       { name: "Ananá" },
       { name: "Frambuesa" },
       { name: "Frutilla" },
@@ -102,7 +98,6 @@ export const categories = [
       { name: "Banana Split" },
       { name: "Cereza" },
       { name: "Coco Split" },
-      { name: "Frágola" },
       { name: "Frutilla a la Crema" },
       { name: "Frutos del Bosque" },
       { name: "Mousse de Arándanos" },
@@ -138,7 +133,7 @@ export const lineaZero = {
   icon: "💙",
   items: [
     "Americana con dulce", "Banana Split", "Chocolate", "Dulce de Leche",
-    "Frágola Dolce", "Frutilla", "Limón", "Selva Negra", "Tramontana", "Vainilla",
+    "Frutilla", "Limón", "Selva Negra", "Tramontana", "Vainilla",
   ],
 };
 
@@ -161,12 +156,6 @@ export const featuredFlavors = [
     category: "Chocolates",
     description: "Crema de avellanas y chocolate",
     photo: "/photos/flavors/kelam.webp",
-  },
-  {
-    name: "Súper Brownie",
-    category: "Chocolates",
-    description: "Crema de chocolate con trozos de brownie",
-    photo: "/photos/flavors/super-brownie.webp",
   },
   {
     name: "Crema Oreo",
@@ -219,13 +208,6 @@ export const newFlavors = [
     category: "Frutas al Agua",
     description: "Frambuesa al agua con merengue italiano",
     gradient: "linear-gradient(160deg, #C43060 0%, #FF8040 100%)",
-    lightText: true,
-  },
-  {
-    name: "Mix Frutal",
-    category: "Frutas al Agua",
-    description: "Durazno al agua con trozos de ananá, durazno, arándanos y salsa de frambuesa",
-    gradient: "linear-gradient(160deg, #E85820 0%, #F0C000 100%)",
     lightText: true,
   },
 ];
