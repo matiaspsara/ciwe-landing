@@ -120,7 +120,8 @@ export const lineaHunno = {
   icon: "🌾",
   items: [
     "Americana", "Chocolate", "Dulce de Leche", "Frutilla a la Crema",
-    "Limón", "Merengue con Dulce", "Naranja con Frutilla", "Vainilla", "Cremaoreo",
+    "Limón", "Merengue con Dulce", "Naranja con Frutilla", "Vainilla",
+    "Cheesecake de Frutilla", "Banana Split",
   ],
 };
 
@@ -195,19 +196,4 @@ export const featuredFlavors = [
   },
 ];
 
-export const newFlavors = [
-  {
-    name: "Chocolate DUBAI",
-    category: "Chocolates",
-    description: "Chocolate amargo con salsa de pistacho y masa kadaifi",
-    gradient: "linear-gradient(160deg, #2C1502 0%, #7B4220 100%)",
-    lightText: true,
-  },
-  {
-    name: "Macaron Frambuesa",
-    category: "Frutas al Agua",
-    description: "Frambuesa al agua con merengue italiano",
-    gradient: "linear-gradient(160deg, #C43060 0%, #FF8040 100%)",
-    lightText: true,
-  },
-];
+export const newFlavors = [];

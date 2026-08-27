@@ -40,22 +40,24 @@ const rightCols = categories.slice(3);    // Frutas al Agua, Dulce de Leche, Fru
     </div>
 
     <!-- Nuevos Sabores — full width featured block -->
-    <div class="bg-brand-green py-10 px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-xs font-black uppercase tracking-[0.3em] text-brand-beige/80">★ Nuevos Sabores</span>
-          <div class="flex-1 h-px bg-white/15"></div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {newFlavors.map(flavor => (
-            <div class="bg-white/10 border border-white/20 rounded-xl p-5">
-              <h3 class="font-heading text-white text-base leading-snug mb-1">{flavor.name}</h3>
-              <p class="text-brand-cream/60 text-xs leading-relaxed">{flavor.description}</p>
-            </div>
-          ))}
+    {newFlavors.length > 0 && (
+      <div class="bg-brand-green py-10 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="text-xs font-black uppercase tracking-[0.3em] text-brand-beige/80">★ Nuevos Sabores</span>
+            <div class="flex-1 h-px bg-white/15"></div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {newFlavors.map(flavor => (
+              <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+                <h3 class="font-heading text-white text-base leading-snug mb-1">{flavor.name}</h3>
+                <p class="text-brand-cream/60 text-xs leading-relaxed">{flavor.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    )}
 
     <!-- Main flavor list -->
     <div class="max-w-6xl mx-auto px-6 py-12">
